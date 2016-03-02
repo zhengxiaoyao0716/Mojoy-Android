@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/>
+        </shape>
+    </item>
+
+    <item android:top="@dimen/entry_button_line_mT"
+          android:left="@dimen/entry_button_line_mLR"
+          android:right="@dimen/entry_button_line_mLR">
+        <shape android:shape="line">
+            <stroke android:color="@color/global_deepBackground" android:width="@dimen/entry_button_line_width"/>
+        </shape>
+    </item>
+
+</layer-list>

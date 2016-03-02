@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="global_padding">16dp</dimen>
+
+    <dimen name="guide_appName_mT">40dp</dimen>
+    <dimen name="guide_briefInfo_mT">20dp</dimen>
+    <dimen name="guide_extraText_mB">60dp</dimen>
+
+    <dimen name="entry_briefInfo_mT">5dp</dimen>
+    <dimen name="entry_button_margin">10dp</dimen>
+    <dimen name="entry_button_line_mT">36dp</dimen>
+    <dimen name="entry_button_line_mLR">10dp</dimen>
+    <dimen name="entry_button_line_width">8dp</dimen>
+    <dimen name="entry_editText_pL">8dp</dimen>
+    <dimen name="entry_editText_pTB">17dp</dimen>
+    <dimen name="entry_Item_mB">13dp</dimen>
+    <dimen name="entry_etTextSize">12sp</dimen>
+    <dimen name="entry_sendSmsCodeButton_pLR">18dp</dimen>
+    <dimen name="entry_resendSmsCodeTipTextSize">9sp</dimen>
+    <dimen name="entry_resendSmsCodeTip_mb">6dp</dimen>
+    <dimen name="entry_quickSignTipTextSize">12sp</dimen>
+    <dimen name="entry_quickSignInTip_mT">20dp</dimen>
+    <dimen name="entry_quickSignButtonBar_mT">12dp</dimen>
+    <dimen name="entry_quickSignInButtonGap">20dp</dimen>
+</resources>
