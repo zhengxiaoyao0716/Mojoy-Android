@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/loginAccount"
+            android:hint="@string/entry_emailEtHint"
+            android:textSize="@dimen/entry_etTextSize"
+            android:textColor="@color/global_negText"
+            android:background="@android:color/white"
+            android:layout_marginBottom="@dimen/entry_loginItem_mB"
+            android:paddingLeft="@dimen/entry_editText_pL"
+            android:paddingTop="@dimen/entry_editText_pTB"
+            android:paddingBottom="@dimen/entry_editText_pTB"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/loginPassword"
+            android:hint="@string/entry_passwordEtHint"
+            android:textSize="@dimen/entry_etTextSize"
+            android:textColor="@color/global_negText"
+            android:background="@android:color/white"
+            android:paddingLeft="@dimen/entry_editText_pL"
+            android:paddingTop="@dimen/entry_editText_pTB"
+            android:paddingBottom="@dimen/entry_editText_pTB"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/entry_missPasswordTip_mT"
+            android:layout_marginBottom="@dimen/entry_missPasswordTip_mB"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_gravity="right"
+            android:text="@string/missPassword"
+            android:textSize="@dimen/entry_resendSmsCodeTipTextSize"
+            android:textColor="@color/global_negText"
+            android:onClick="onMissPasswordTipClick"
+            tools:ignore="SmallSp"/>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/global_login"
+            android:textColor="@color/global_normalText"
+            android:background="@color/global_deepBackground"
+            android:onClick="onLoginButtonClick"/>
 
 </LinearLayout>

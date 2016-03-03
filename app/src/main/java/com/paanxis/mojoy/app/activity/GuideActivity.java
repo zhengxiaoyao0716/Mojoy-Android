@@ -20,13 +20,13 @@ public class GuideActivity extends Activity {
 
         if (account == null || token == null)
         {
-            //1s后跳转到入口界面
+            //1.5s后跳转到入口界面
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    ActivityUtil.jumpNew(GuideActivity.this, GuideActivity.class);
+                    ActivityManage.jumpNew(GuideActivity.this, EntryActivity.class);
                 }
-            }, 1000);
+            }, 1500);
         }
         //自动登录
         else new Login(this, account, token, null).start();

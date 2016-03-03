@@ -6,8 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Message;
 import android.widget.Toast;
 import com.paanxis.mojoy.app.R;
-import com.paanxis.mojoy.app.activity.ActivityUtil;
-import com.paanxis.mojoy.app.activity.GuideActivity;
+import com.paanxis.mojoy.app.activity.ActivityManage;
+import com.paanxis.mojoy.app.activity.EntryActivity;
 import com.paanxis.mojoy.app.activity.HomeActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -71,7 +71,7 @@ public class Login extends HttpThread {
         void handleMessage(Activity activity, Message message) {
             if (message.what != 1)
             {
-                if (quickLogin) ActivityUtil.jumpNew(activity, GuideActivity.class);
+                if (quickLogin) ActivityManage.jumpNew(activity, EntryActivity.class);
                 else Toast.makeText(activity, R.string.entry_loginFailed, Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -82,7 +82,7 @@ public class Login extends HttpThread {
             preferences.edit().putString("token", response.optString("token")).apply();
 
             Toast.makeText(activity, R.string.entry_loginSucceed, Toast.LENGTH_SHORT).show();
-            ActivityUtil.jumpNew(activity, HomeActivity.class);
+            ActivityManage.jumpNew(activity, HomeActivity.class);
         }
     }
 }

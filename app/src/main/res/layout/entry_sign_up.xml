@@ -10,12 +10,12 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/signUpEmail"
             android:hint="@string/entry_emailEtHint"
             android:textSize="@dimen/entry_etTextSize"
             android:textColor="@color/global_negText"
             android:background="@android:color/white"
-            android:layout_marginBottom="@dimen/entry_Item_mB"
+            android:layout_marginBottom="@dimen/entry_signUpItem_mB"
             android:paddingLeft="@dimen/entry_editText_pL"
             android:paddingTop="@dimen/entry_editText_pTB"
             android:paddingBottom="@dimen/entry_editText_pTB"/>
@@ -25,12 +25,12 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/signUpPhone"
             android:hint="@string/entry_phoneEtHint"
             android:textSize="@dimen/entry_etTextSize"
             android:textColor="@color/global_negText"
             android:background="@android:color/white"
-            android:layout_marginBottom="@dimen/entry_Item_mB"
+            android:layout_marginBottom="@dimen/entry_signUpItem_mB"
             android:paddingLeft="@dimen/entry_editText_pL"
             android:paddingTop="@dimen/entry_editText_pTB"
             android:paddingBottom="@dimen/entry_editText_pTB"/>
@@ -46,7 +46,7 @@
                 android:layout_weight="1"
                 android:inputType="number"
                 android:maxLength="6"
-                android:id="@+id/editText3"
+                android:id="@+id/signUpSmsCode"
                 android:hint="@string/entry_smsCodeEtHint"
                 android:textSize="@dimen/entry_etTextSize"
                 android:textColor="@color/global_negText"
@@ -62,7 +62,7 @@
                 android:paddingRight="@dimen/entry_sendSmsCodeButton_pLR"
                 android:text="@string/entry_sendSmsCodeButtonText"
                 android:textColor="@color/global_negText"
-                android:id="@+id/button"
+                android:onClick="onSendSmsCodeButtonClick"
                 android:background="@color/entry_sendSmsCodeButtonBg"/>
 
     </LinearLayout>
@@ -76,7 +76,6 @@
             android:text="@string/entry_resendSmsCodeTip"
             android:textSize="@dimen/entry_resendSmsCodeTipTextSize"
             android:textColor="@color/global_negText"
-            android:id="@+id/textView"
             tools:ignore="SmallSp"/>
 
     <EditText
@@ -84,12 +83,12 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText4"
+            android:id="@+id/signUpPassword"
             android:hint="@string/entry_passwordEtHint"
             android:textSize="@dimen/entry_etTextSize"
             android:textColor="@color/global_negText"
             android:background="@android:color/white"
-            android:layout_marginBottom="@dimen/entry_Item_mB"
+            android:layout_marginBottom="@dimen/entry_signUpItem_mB"
             android:paddingLeft="@dimen/entry_editText_pL"
             android:paddingTop="@dimen/entry_editText_pTB"
             android:paddingBottom="@dimen/entry_editText_pTB"/>
@@ -97,9 +96,9 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/global_signIn"
+            android:text="@string/global_signUp"
             android:textColor="@color/global_normalText"
-            android:id="@+id/button2"
-            android:background="@color/global_deepBackground"/>
+            android:background="@color/global_deepBackground"
+            android:onClick="onSignUpButtonClick"/>
 
 </LinearLayout>

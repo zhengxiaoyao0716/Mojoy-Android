@@ -7,6 +7,6 @@
     <color name="global_negText">#888888</color>
 
     <color name="entry_sendSmsCodeButtonBg">#dddddd</color>
-    <color name="entry_quickSignInButtonBg">#e3e3e3</color>
+    <color name="entry_quickSignUpButtonBg">#e3e3e3</color>
 
 </resources>

@@ -36,14 +36,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/global_signIn"
+                android:text="@string/global_signUp"
                 android:textColor="@color/global_normalText"
                 android:id="@+id/signUpButton"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/entry_button"
                 style="?android:attr/buttonStyle"
+                android:onClick="onEntryMethodTagClick"
                 android:enabled="false"
-                tools:enabled="true"/>
+                tools:enabled="false"/>
 
         <Button
                 android:layout_width="0dp"
@@ -55,101 +56,116 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/entry_button"
                 style="?android:attr/buttonStyle"
-                android:enabled="false"/>
+                android:onClick="onEntryMethodTagClick"
+                android:enabled="true"/>
 
     </LinearLayout>
 
     <include
+            android:id="@+id/signUpView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            layout="@layout/entry_sign_in"
+            layout="@layout/entry_sign_up"
             android:layout_gravity="center_horizontal"
-            android:visibility="invisible"
+            android:visibility="visible"
             tools:visibility="visible"/>
 
     <include
+            android:id="@+id/loginView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             layout="@layout/entry_login"
             android:layout_gravity="center_horizontal"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
 
     <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/entry_quickSignInTip_mT">
-
-        <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:background="@color/global_deepBackground"/>
-        
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/entry_quickSignIn"
-                android:id="@+id/textView2"
-                android:textSize="@dimen/entry_quickSignTipTextSize"
-                android:textColor="@color/global_negText"/>
-
-        <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:background="@color/global_deepBackground"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="@dimen/entry_quickSignButtonBar_mT">
-
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton1"
-                android:background="@drawable/entry_quick_sign_in_button"
-                android:contentDescription="@string/entry_quickSignInImageButton"/>
-
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/entry_quickSignInButtonGap"
-                android:layout_marginRight="@dimen/entry_quickSignInButtonGap"
-                android:id="@+id/imageButton2"
-                android:background="@drawable/entry_quick_sign_in_button"
-                android:contentDescription="@string/entry_quickSignInImageButton"/>
-
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton3"
-                android:background="@drawable/entry_quick_sign_in_button"
-                android:contentDescription="@string/entry_quickSignInImageButton"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="right|bottom">
+            android:gravity="bottom">
 
-        <Button
-                android:layout_width="wrap_content"
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/entry_jumpEntry"
-                android:textColor="@color/global_negText"
-                android:id="@+id/button3"
-                android:background="@android:color/transparent"/>
+                android:layout_marginTop="@dimen/entry_quickSignInTip_mT">
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/global_deepBackground"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/entry_quickSignIn"
+                    android:id="@+id/textView2"
+                    android:textSize="@dimen/entry_quickSignTipTextSize"
+                    android:textColor="@color/global_negText"/>
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/global_deepBackground"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/entry_quickSignButtonBar_mT">
+
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quickSignUp1"
+                    android:background="@drawable/entry_quick_sign_up_button"
+                    android:onClick="onQuickSignUpButtonClick"
+                    android:contentDescription="@string/entry_quickSignInImageButton"/>
+
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/entry_quickSignInButtonGap"
+                    android:layout_marginRight="@dimen/entry_quickSignInButtonGap"
+                    android:id="@+id/quickSignUp2"
+                    android:background="@drawable/entry_quick_sign_up_button"
+                    android:onClick="onQuickSignUpButtonClick"
+                    android:contentDescription="@string/entry_quickSignInImageButton"/>
+
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quickSignUp3"
+                    android:background="@drawable/entry_quick_sign_up_button"
+                    android:onClick="onQuickSignUpButtonClick"
+                    android:contentDescription="@string/entry_quickSignInImageButton"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right|bottom">
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entry_jumpEntry"
+                    android:textColor="@color/global_negText"
+                    android:id="@+id/button3"
+                    android:background="@android:color/transparent"
+                    android:onClick="onJumpEntryButtonClick"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
