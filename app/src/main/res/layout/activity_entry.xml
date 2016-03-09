@@ -4,32 +4,31 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:padding="@dimen/global_padding"
+              android:paddingLeft="@dimen/global_padding"
+              android:paddingRight="@dimen/global_padding"
               tools:context="${linearPackage}.${activityClass}">
 
-    <TextView
+    <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/app_name"
-            android:id="@+id/entry_appName"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/entry_logoImageView_mT"
+            android:src="@mipmap/logo"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/briefIntro"
+            android:text="@string/global_briefIntro"
             android:textColor="@color/global_normalText"
-            android:id="@+id/entry_briefIntro"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/entry_briefInfo_mT"/>
+            android:layout_marginTop="@dimen/global_briefInfo_mT"/>
 
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/entry_button_margin"
+            android:layout_marginBottom="@dimen/entry_tabButton_mB"
             style="?android:attr/buttonBarStyle">
 
         <Button
@@ -38,6 +37,7 @@
                 android:layout_weight="1"
                 android:text="@string/global_signUp"
                 android:textColor="@color/global_normalText"
+                android:textSize="@dimen/entry_tabButtonTextSize"
                 android:id="@+id/signUpButton"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/entry_button"
@@ -52,6 +52,7 @@
                 android:layout_weight="1"
                 android:text="@string/global_login"
                 android:textColor="@color/global_normalText"
+                android:textSize="@dimen/entry_tabButtonTextSize"
                 android:id="@+id/loginButton"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/entry_button"
@@ -95,7 +96,7 @@
                     android:layout_height="1dp"
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/global_deepBackground"/>
+                    android:background="@color/global_negative"/>
 
             <TextView
                     android:layout_width="wrap_content"
@@ -104,14 +105,14 @@
                     android:text="@string/entry_quickSignIn"
                     android:id="@+id/textView2"
                     android:textSize="@dimen/entry_quickSignTipTextSize"
-                    android:textColor="@color/global_negText"/>
+                    android:textColor="@color/global_negative"/>
 
             <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/global_deepBackground"/>
+                    android:background="@color/global_negative"/>
 
         </LinearLayout>
 
@@ -160,7 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/entry_jumpEntry"
-                    android:textColor="@color/global_negText"
+                    android:textColor="@color/global_negative"
                     android:id="@+id/button3"
                     android:background="@android:color/transparent"
                     android:onClick="onJumpEntryButtonClick"/>

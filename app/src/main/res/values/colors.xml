@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="global_background">#f3f3f3</color>
-    <color name="global_deepBackground">#cccccc</color>
-    <color name="global_normalText">#555555</color>
-    <color name="global_negText">#888888</color>
+    <color name="global_default">#ebe2d5</color>
+    <color name="global_light">#fed535</color>
+    <color name="global_lightNegative">#c9caca</color>
+    <color name="global_negative">#999999</color>
+    <color name="global_normalText">#595757</color>
+    <color name="global_lightText">#3e3a39</color>
 
-    <color name="entry_sendSmsCodeButtonBg">#dddddd</color>
-    <color name="entry_quickSignUpButtonBg">#e3e3e3</color>
+    <color name="signUpSucceed_negText">#aeaeae</color>
 
 </resources>

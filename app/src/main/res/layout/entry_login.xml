@@ -8,17 +8,17 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="phone"
             android:ems="10"
-            android:id="@+id/loginAccount"
-            android:hint="@string/entry_emailEtHint"
-            android:textSize="@dimen/entry_etTextSize"
-            android:textColor="@color/global_negText"
-            android:background="@android:color/white"
+            android:id="@+id/loginPhone"
+            android:hint="@string/global_phoneEtHint"
+            android:textSize="@dimen/global_etTextSize"
+            android:textColor="@color/global_lightNegative"
+            android:background="@drawable/global_edit_text_bg"
             android:layout_marginBottom="@dimen/entry_loginItem_mB"
-            android:paddingLeft="@dimen/entry_editText_pL"
-            android:paddingTop="@dimen/entry_editText_pTB"
-            android:paddingBottom="@dimen/entry_editText_pTB"/>
+            android:paddingLeft="@dimen/global_editText_pL"
+            android:paddingTop="@dimen/global_editText_pTB"
+            android:paddingBottom="@dimen/global_editText_pTB"/>
 
     <EditText
             android:layout_width="match_parent"
@@ -26,25 +26,28 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/loginPassword"
-            android:hint="@string/entry_passwordEtHint"
-            android:textSize="@dimen/entry_etTextSize"
-            android:textColor="@color/global_negText"
-            android:background="@android:color/white"
-            android:paddingLeft="@dimen/entry_editText_pL"
-            android:paddingTop="@dimen/entry_editText_pTB"
-            android:paddingBottom="@dimen/entry_editText_pTB"/>
+            android:hint="@string/global_passwordEtHint"
+            android:textSize="@dimen/global_etTextSize"
+            android:textColor="@color/global_lightNegative"
+            android:background="@drawable/global_edit_text_bg"
+            android:paddingLeft="@dimen/global_editText_pL"
+            android:paddingTop="@dimen/global_editText_pTB"
+            android:paddingBottom="@dimen/global_editText_pTB"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/entry_missPasswordTip_mT"
-            android:layout_marginBottom="@dimen/entry_missPasswordTip_mB"
+            android:paddingLeft="@dimen/entry_missPasswordTip_padding"
+            android:paddingRight="@dimen/entry_missPasswordTip_padding"
+            android:paddingTop="@dimen/entry_missPasswordTip_padding"
+            android:paddingBottom="@dimen/entry_missPasswordTip_pB"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_gravity="right"
-            android:text="@string/missPassword"
-            android:textSize="@dimen/entry_resendSmsCodeTipTextSize"
-            android:textColor="@color/global_negText"
+            android:text="@string/entry_missPasswordTip"
+            android:textSize="@dimen/global_resendSmsCodeTipTextSize"
+            android:textColor="@color/global_negative"
             android:onClick="onMissPasswordTipClick"
+            android:clickable="true"
             tools:ignore="SmallSp"/>
 
     <Button
@@ -52,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="@string/global_login"
             android:textColor="@color/global_normalText"
-            android:background="@color/global_deepBackground"
+            android:background="@drawable/global_corner_button_bg"
             android:onClick="onLoginButtonClick"/>
 
 </LinearLayout>

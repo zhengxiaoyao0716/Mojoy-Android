@@ -1,5 +1,13 @@
 package com.paanxis.mojoy.app.net;
 
+import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
+import android.util.Log;
+import com.paanxis.mojoy.app.net.account.Login;
+import com.paanxis.mojoy.app.util.Encryption;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -8,16 +16,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * HttpConnect.
  * Created by zhengxiaoyao0716 on 2016/2/24.
  */
 public class HttpConnect {
-    static final String HOST = "http://mojoy.paanxis.com/v1";
+    private static final String HOST = "http://114.215.107.179:8080/Mojoy";
 
     private static String cookie;
-    public static JSONObject get(String uri) throws IOException, JSONException
+    public static JSONObject get(String uri) throws IOException
     {
         /* Connect */
         HttpURLConnection connection = openConnection(uri);
@@ -26,7 +36,7 @@ public class HttpConnect {
         connection.setRequestMethod("GET");
 
         /* Response */
-        return getResonse(connection);
+        return getResponse(connection);
     }
 
     /**
@@ -36,17 +46,48 @@ public class HttpConnect {
      * @return 响应内容
      * @throws IOException 错误
      */
-    public static JSONObject post(String uri, JSONObject content) throws IOException, JSONException {
+    public static JSONObject post(String uri, JSONObject content) throws IOException {
         /* Connect */
         HttpURLConnection connection = openConnection(uri);
 
         /* Post */
         connection.setRequestMethod("POST");
         connection.setDoOutput(true);
-        connection.getOutputStream().write(content.toString().getBytes());
+
+        JSONObject packedContent = null;
+        try {
+            packedContent = packContent(content);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        if (packedContent == null) return null;
+        else connection.getOutputStream().write(packedContent.toString().getBytes());
 
         /* Response */
-        return getResonse(connection);
+        return getResponse(connection);
+    }
+    private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
+    private static JSONObject packContent(JSONObject content) throws JSONException {
+        return new JSONObject(
+        ).put(
+                "msgHeader", new JSONObject(
+                ).put(
+                        "version", Build.VERSION.SDK_INT
+                ).put(
+                        "type", 1
+                ).put(
+                        "timeStamp", format.format(System.currentTimeMillis())
+                ).put(
+                        "sign", Encryption.INSTANCE.sign(content)
+                ).put(
+                        "token", Login.token
+                )
+        ).put(
+                "msgBody", new JSONObject(
+                ).put(
+                        "content", content
+                )
+        );
     }
     private static HttpURLConnection openConnection(String uri) throws IOException {
         HttpURLConnection connection = (HttpURLConnection) new URL(HOST + uri).openConnection();
@@ -58,7 +99,7 @@ public class HttpConnect {
 
         return connection;
     }
-    private static JSONObject getResonse(HttpURLConnection connection) throws JSONException, IOException {
+    private static JSONObject getResponse(HttpURLConnection connection) throws IOException {
         /* Response */
         int responseCode = connection.getResponseCode();
         if (responseCode == HttpURLConnection.HTTP_OK)
@@ -68,15 +109,23 @@ public class HttpConnect {
             if(cookie != null && cookie.length() > 0) HttpConnect.cookie = cookie;
             //获取Response
             String responseStr = readStream(connection.getInputStream());
-            //System.out.println("response = " + response);
-            if (responseStr.length() == 0) return null;
-            else return new JSONObject(responseStr);
+            try {
+                return new JSONObject(responseStr);
+            } catch (JSONException e) {
+                //响应不是Json序列
+                try {
+                    return new JSONObject().put("responseStr", responseStr);
+                } catch (JSONException e1) {
+                    e1.printStackTrace();
+                    //响应是Json不支持的类型
+                    return null;
+                }
+            }
         } else {
-            throw new IOException(
-                    "HTTP status error!" +
-                            "\n        error code: " + responseCode +
-                            "\n        error message: " + readStream(connection.getErrorStream())
-            );
+            Log.e("HTTP status error!",
+                    "error code: " + responseCode +
+                    "\nerror message: " + readStream(connection.getErrorStream()));
+            return null;
         }
     }
     /**
@@ -93,5 +142,15 @@ public class HttpConnect {
         outputStream.close();
         inputStream.close();
         return outputStream.toString();
+    }
+
+    public static boolean checkNet(Activity activity)
+    {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager == null) return false;
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnected();
     }
 }

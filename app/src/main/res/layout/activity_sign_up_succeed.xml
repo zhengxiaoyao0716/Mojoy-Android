@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/logo"
+            android:id="@+id/guide_appLogo"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/guide_appLogo_mT"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/global_briefIntro"
+            android:textColor="@color/global_normalText"
+            android:id="@+id/guide_briefIntro"
+            android:layout_below="@+id/guide_appLogo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/global_briefInfo_mT"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/signUpSucceed_title"
+            android:textColor="@color/global_normalText"
+            android:textSize="@dimen/signUpSucceed_firstTextSize"
+            android:id="@+id/textView"
+            android:layout_below="@+id/guide_briefIntro"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/signUpSucceed_firstText_mt"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@mipmap/ok"
+            android:layout_marginTop="@dimen/signUpSucceed_okImage_mt"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/signUpSucceed_welcomeJoinUs"
+            android:textColor="@color/signUpSucceed_negText"
+            android:textSize="@dimen/signUpSucceed_secondTextSize"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/signUpSucceed_secondText_mt"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/signUpSucceed_waitingAutoEntry"
+            android:textColor="@color/signUpSucceed_negText"
+            android:textSize="@dimen/signUpSucceed_thirdTextSize"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/signUpSucceed_thirdText_mt"/>
+
+</RelativeLayout>

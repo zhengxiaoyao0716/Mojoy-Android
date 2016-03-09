@@ -1,25 +1,31 @@
 <resources>
     <string name="app_name">魔借</string>
-    <string name="briefIntro">物品租借平台</string>
+    <string name="global_briefIntro">物品租借平台</string>
     <string name="global_waiting">请稍等。。。</string>
     <string name="global_noneConnect">无网络连接</string>
     <string name="global_signUp">注册</string>
     <string name="global_login">登录</string>
+    <string name="global_emailEtHint">（可不填）邮箱</string>
+    <string name="global_phoneEtHint">手机号（仅支持中国大陆号码）</string>
+    <string name="global_smsCodeEtHint">短信验证码</string>
+    <string name="global_resendSmsCodeTip">没收到？再次发送</string>
+    <string name="global_passwordEtHint">密码（不少于6位）</string>
 
     <string name="guide_extraText">xxxxxxxxxx</string>
 
     <string name="entry_loginTip">正在登录</string>
-    <string name="entry_loginFailed">登录失败，用户名或密码错误</string>
-    <string name="entry_loginSucceed">登录成功</string>
     <string name="entry_logoutFailed">注销失败</string>
-    <string name="entry_emailEtHint">邮箱</string>
-    <string name="entry_phoneEtHint">手机号（仅支持中国大陆号码）</string>
-    <string name="entry_smsCodeEtHint">短信验证码</string>
-    <string name="entry_sendSmsCodeButtonText">发送</string>
-    <string name="entry_resendSmsCodeTip">没收到？再次发送</string>
-    <string name="entry_passwordEtHint">密码（不少于6位）</string>
+    <string name="global_sendSmsCodeText">发送</string>
     <string name="entry_quickSignIn">快捷方式注册</string>
     <string name="entry_jumpEntry">随便逛逛</string>
     <string name="entry_quickSignInImageButton">quickSignImageButton</string>
-    <string name="missPassword">忘记密码？</string>
+    <string name="entry_missPasswordTip">忘记密码？</string>
+
+    <string name="signUpSucceed_title">注册成功</string>
+    <string name="signUpSucceed_welcomeJoinUs">欢迎加入</string>
+    <string name="signUpSucceed_waitingAutoEntry">2秒后自动跳转进入应用</string>
+
+    <string name="missPassword_title">忘记密码</string>
+    <string name="global_ok">确认</string>
+    <string name="missPwd_surePwd">确认密码</string>
 </resources>

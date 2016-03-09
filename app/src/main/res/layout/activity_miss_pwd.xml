@@ -3,19 +3,40 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:padding="@dimen/global_padding">
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:src="@mipmap/close"
+            android:background="@android:color/transparent"
+            android:onClick="onCloseButtonClick"
+            android:layout_marginTop="@dimen/missPassword_closeButton_mt"
+            android:layout_gravity="right"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/missPassword_title"
+            android:textColor="@color/global_normalText"
+            android:layout_marginTop="@dimen/missPwd_title_mt"
+            android:layout_marginBottom="@dimen/missPwd_title_mb"
+            android:layout_gravity="center_horizontal"/>
 
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/signUpPhone"
+            android:id="@+id/phone"
             android:hint="@string/global_phoneEtHint"
             android:textSize="@dimen/global_etTextSize"
             android:textColor="@color/global_lightNegative"
             android:background="@drawable/global_edit_text_bg"
-            android:layout_marginBottom="@dimen/entry_signUpItem_mB"
+            android:layout_marginBottom="@dimen/missPwd_signUpItem_mB"
             android:paddingLeft="@dimen/global_editText_pL"
             android:paddingTop="@dimen/global_editText_pTB"
             android:paddingBottom="@dimen/global_editText_pTB"/>
@@ -31,7 +52,7 @@
                 android:layout_weight="1"
                 android:inputType="number"
                 android:maxLength="6"
-                android:id="@+id/signUpSmsCode"
+                android:id="@+id/smsCode"
                 android:hint="@string/global_smsCodeEtHint"
                 android:textSize="@dimen/global_etTextSize"
                 android:textColor="@color/global_lightNegative"
@@ -59,7 +80,8 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/entry_sign_up_resendSmsCodeTip_mB"
+            android:layout_marginTop="@dimen/missPwd_resendSmsCodeTip_mT"
+            android:layout_marginBottom="@dimen/missPwd_resendSmsCodeTip_mB"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_gravity="right"
             android:text="@string/global_resendSmsCodeTip"
@@ -72,12 +94,12 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/signUpPassword"
+            android:id="@+id/password"
             android:hint="@string/global_passwordEtHint"
             android:textSize="@dimen/global_etTextSize"
             android:textColor="@color/global_lightNegative"
             android:background="@drawable/global_edit_text_bg"
-            android:layout_marginBottom="@dimen/entry_signUpItem_mB"
+            android:layout_marginBottom="@dimen/missPwd_signUpItem_mB"
             android:paddingLeft="@dimen/global_editText_pL"
             android:paddingTop="@dimen/global_editText_pTB"
             android:paddingBottom="@dimen/global_editText_pTB"/>
@@ -85,14 +107,14 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/signUpEmail"
-            android:hint="@string/global_emailEtHint"
+            android:id="@+id/surePwd"
+            android:hint="@string/missPwd_surePwd"
             android:textSize="@dimen/global_etTextSize"
             android:textColor="@color/global_lightNegative"
             android:background="@drawable/global_edit_text_bg"
-            android:layout_marginBottom="@dimen/entry_signUpItem_mB"
+            android:layout_marginBottom="@dimen/missPwd_signUpItem_mB"
             android:paddingLeft="@dimen/global_editText_pL"
             android:paddingTop="@dimen/global_editText_pTB"
             android:paddingBottom="@dimen/global_editText_pTB"/>
@@ -100,10 +122,10 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/global_signUp"
+            android:text="@string/global_ok"
             android:textSize="@dimen/global_cornerButtonTextSize"
             android:textColor="@color/global_lightText"
             android:background="@drawable/global_corner_button_bg"
-            android:onClick="onSignUpButtonClick"/>
+            android:onClick="onOkButtonClick"/>
 
 </LinearLayout>

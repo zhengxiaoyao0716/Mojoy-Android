@@ -11,7 +11,7 @@
           android:left="@dimen/entry_button_line_mLR"
           android:right="@dimen/entry_button_line_mLR">
         <shape android:shape="line">
-            <stroke android:color="@color/global_deepBackground" android:width="@dimen/entry_button_line_width"/>
+            <stroke android:color="@color/global_light" android:width="@dimen/entry_button_line_width"/>
         </shape>
     </item>
 

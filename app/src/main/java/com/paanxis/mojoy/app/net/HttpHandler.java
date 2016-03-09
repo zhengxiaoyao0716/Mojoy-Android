@@ -6,14 +6,15 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
 import com.paanxis.mojoy.app.R;
+import org.json.JSONObject;
 
 /**
  * HttpHandler.
  * Created by zhengxiaoyao0716 on 2016/2/24.
  */
 public abstract class HttpHandler extends Handler {
-    Activity activity;
-    ProgressDialog progressDialog;
+    private final Activity activity;
+    private ProgressDialog progressDialog;
 
     /**
      * 建立带有等待进度圈默认提示文字的Handler，HttpHandler(this, true, R.string.waiting).
@@ -38,20 +39,27 @@ public abstract class HttpHandler extends Handler {
             progressDialog.show();
         }
     }
+
     @Override
     public void handleMessage(Message message)
     {
-        if (progressDialog!=null) progressDialog.dismiss();
+        if (progressDialog != null) progressDialog.dismiss();
 
-        if (message.what == -1)
-            Toast.makeText(activity, R.string.global_noneConnect, Toast.LENGTH_SHORT).show();
-        else handleMessage(activity, message);
+        if (message.what == 1)
+        {
+            JSONObject msgBody = ((JSONObject) message.obj).optJSONObject("msgBody");
+            if (msgBody.optBoolean("status")) success(activity, msgBody.optJSONObject("content"));
+            else failed(activity, msgBody.optInt("errorCode"), msgBody.optString("desc"));
+        }
+        else if (message.what == -1) noneConnect(activity);
+        else connectErr(activity);
     }
 
-    /**
-     * 处理消息，重写该方法.
-     * @param activity 处理消息的Activity
-     * @param message 待处理的消息
-     */
-    abstract void handleMessage(Activity activity, Message message);
+    public abstract void success(Activity activity, JSONObject content);
+
+    public void failed(Activity activity, int errorCode, String desc) { Toast.makeText(activity, desc, Toast.LENGTH_SHORT).show(); }
+
+    public void noneConnect(Activity activity) { Toast.makeText(activity, R.string.global_noneConnect, Toast.LENGTH_SHORT).show(); }
+
+    public void connectErr(Activity activity) { noneConnect(activity); }
 }

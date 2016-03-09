@@ -4,15 +4,20 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
 
+import java.io.IOException;
+
 /**
  * HttpThread.
  * Created by zhengxiaoyao0716 on 2016/2/24.
  */
 public abstract class HttpThread extends Thread {
-    private boolean netConnected;
-    Handler handler;
-    public HttpThread(Activity activity) {
-        netConnected = NetManage.connected(activity);
+    private final boolean netConnected;
+    private final Handler handler;
+
+    public HttpThread(Activity activity, Handler handler)
+    {
+        netConnected = HttpConnect.checkNet(activity);
+        this.handler = handler;
     }
 
     /**
@@ -21,19 +26,26 @@ public abstract class HttpThread extends Thread {
     @Override
     public void run() {
         Message message = handler.obtainMessage();
+
+        //检查网络状态
         if (!netConnected)
         {
             message.what = -1;
             handler.sendMessage(message);
             return;
         }
-        run(message);
+
+        //获取数据
+        try {
+            message.obj = getMessageObject();
+            message.what = message.obj == null ? 0 : 1;
+        } catch (IOException e) {
+            e.printStackTrace();
+            message.what = -1;
+        }
+
+        handler.sendMessage(message);
 
     }
-
-    /**
-     * 实际运行的内容，重写该方法.
-     * @param message 用于装载的消息箱
-     */
-    abstract void run(Message message);
+    public abstract Object getMessageObject() throws IOException;
 }

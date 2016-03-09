@@ -1,28 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="global_padding">16dp</dimen>
 
-    <dimen name="guide_appName_mT">40dp</dimen>
-    <dimen name="guide_briefInfo_mT">20dp</dimen>
-    <dimen name="guide_extraText_mB">60dp</dimen>
+    <dimen name="global_padding">12dp</dimen>
+    <dimen name="global_briefInfo_mT">18dp</dimen>
+    <dimen name="global_strokeWidth">1dp</dimen>
+    <dimen name="global_editText_pL">8dp</dimen>
+    <dimen name="global_editText_pTB">13dp</dimen>
+    <dimen name="global_etTextSize">15sp</dimen>
+    <dimen name="global_sendSmsCode_pLR">18dp</dimen>
+    <dimen name="global_sendSmsCodeTextSize">13sp</dimen>
+    <dimen name="global_resendSmsCodeTipTextSize">10sp</dimen>
+    <dimen name="entry_sign_up_resendSmsCodeTip_mB">3dp</dimen>
+    <dimen name="global_cornerButtonTextSize">20sp</dimen>
 
-    <dimen name="entry_briefInfo_mT">5dp</dimen>
-    <dimen name="entry_button_margin">12dp</dimen>
+    <dimen name="guide_appLogo_mT">74dp</dimen>
+    <dimen name="guide_extraText_mB">85dp</dimen>
+
+    <dimen name="entry_logoImageView_mT">40dp</dimen>
     <dimen name="entry_button_line_mT">36dp</dimen>
-    <dimen name="entry_button_line_mLR">10dp</dimen>
-    <dimen name="entry_button_line_width">8dp</dimen>
-    <dimen name="entry_editText_pL">8dp</dimen>
-    <dimen name="entry_editText_pTB">17dp</dimen>
+    <dimen name="entry_button_line_mLR">23dp</dimen>
+    <dimen name="entry_button_line_width">5dp</dimen>
+    <dimen name="entry_tabButtonTextSize">20sp</dimen>
+    <dimen name="entry_tabButton_mB">15dp</dimen>
+    <dimen name="entry_edit_text_corners">15dp</dimen>
     <dimen name="entry_signUpItem_mB">13dp</dimen>
-    <dimen name="entry_etTextSize">12sp</dimen>
-    <dimen name="entry_sendSmsCodeButton_pLR">18dp</dimen>
-    <dimen name="entry_resendSmsCodeTipTextSize">9sp</dimen>
-    <dimen name="entry_resendSmsCodeTip_mb">6dp</dimen>
     <dimen name="entry_quickSignTipTextSize">12sp</dimen>
     <dimen name="entry_quickSignInTip_mT">20dp</dimen>
     <dimen name="entry_quickSignButtonBar_mT">12dp</dimen>
     <dimen name="entry_quickSignInButtonGap">20dp</dimen>
-    <dimen name="entry_loginItem_mB">30dp</dimen>
-    <dimen name="entry_missPasswordTip_mT">3dp</dimen>
-    <dimen name="entry_missPasswordTip_mB">30dp</dimen>
+    <dimen name="entry_loginItem_mB">32dp</dimen>
+    <dimen name="entry_missPasswordTip_padding">8dp</dimen>
+    <dimen name="entry_missPasswordTip_pB">24dp</dimen>
+
+    <dimen name="signUpSucceed_firstTextSize">30sp</dimen>
+    <dimen name="signUpSucceed_secondTextSize">20sp</dimen>
+    <dimen name="signUpSucceed_thirdTextSize">13sp</dimen>
+    <dimen name="signUpSucceed_firstText_mt">64dp</dimen>
+    <dimen name="signUpSucceed_okImage_mt">30dp</dimen>
+    <dimen name="signUpSucceed_secondText_mt">34dp</dimen>
+    <dimen name="signUpSucceed_thirdText_mt">12dp</dimen>
+
+    <dimen name="missPassword_closeButton_mt">20dp</dimen>
+    <dimen name="missPwd_title_mt">60dp</dimen>
+    <dimen name="missPwd_title_mb">30dp</dimen>
+    <dimen name="missPwd_signUpItem_mB">30dp</dimen>
+    <dimen name="missPwd_resendSmsCodeTip_mT">5dp</dimen>
+    <dimen name="missPwd_resendSmsCodeTip_mB">10dp</dimen>
+
 </resources>

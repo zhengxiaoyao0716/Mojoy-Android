@@ -4,26 +4,25 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}">
 
-    <TextView
+    <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/app_name"
-            android:id="@+id/guide_appName"
+            android:src="@mipmap/logo"
+            android:id="@+id/guide_appLogo"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/guide_appName_mT"/>
+            android:layout_marginTop="@dimen/guide_appLogo_mT"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/briefIntro"
+            android:text="@string/global_briefIntro"
             android:textColor="@color/global_normalText"
             android:id="@+id/guide_briefIntro"
-            android:layout_below="@+id/guide_appName"
+            android:layout_below="@+id/guide_appLogo"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/guide_briefInfo_mT"/>
+            android:layout_marginTop="@dimen/global_briefInfo_mT"/>
 
     <TextView
             android:layout_width="wrap_content"
