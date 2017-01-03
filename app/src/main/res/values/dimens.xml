@@ -10,7 +10,6 @@
     <dimen name="global_sendSmsCode_pLR">18dp</dimen>
     <dimen name="global_sendSmsCodeTextSize">13sp</dimen>
     <dimen name="global_resendSmsCodeTipTextSize">10sp</dimen>
-    <dimen name="entry_sign_up_resendSmsCodeTip_mB">3dp</dimen>
     <dimen name="global_cornerButtonTextSize">20sp</dimen>
 
     <dimen name="guide_appLogo_mT">74dp</dimen>
@@ -24,9 +23,10 @@
     <dimen name="entry_tabButton_mB">15dp</dimen>
     <dimen name="entry_edit_text_corners">15dp</dimen>
     <dimen name="entry_signUpItem_mB">13dp</dimen>
+    <dimen name="entry_sign_up_resendSmsCodeTip_mB">3dp</dimen>
     <dimen name="entry_quickSignTipTextSize">12sp</dimen>
-    <dimen name="entry_quickSignInTip_mT">20dp</dimen>
-    <dimen name="entry_quickSignButtonBar_mT">12dp</dimen>
+    <dimen name="entry_quickSignInTip_mT">10dp</dimen>
+    <dimen name="entry_quickSignButtonBar_mT">10dp</dimen>
     <dimen name="entry_quickSignInButtonGap">20dp</dimen>
     <dimen name="entry_loginItem_mB">32dp</dimen>
     <dimen name="entry_missPasswordTip_padding">8dp</dimen>
@@ -46,5 +46,16 @@
     <dimen name="missPwd_signUpItem_mB">30dp</dimen>
     <dimen name="missPwd_resendSmsCodeTip_mT">5dp</dimen>
     <dimen name="missPwd_resendSmsCodeTip_mB">10dp</dimen>
+
+    <dimen name="home_topBarPadding">10dp</dimen>
+    <dimen name="home_noticeHeight">100dp</dimen>
+    <dimen name="home_dotBar_mb">6dp</dimen>
+    <dimen name="home_dot_mL">30dp</dimen>
+    <dimen name="home_label_mL">13dp</dimen>
+    <dimen name="home_labelItem_padding">5dp</dimen>
+    <dimen name="home_labelTextSize">12sp</dimen>
+
+    <dimen name="temp_circleButtonSize">45dp</dimen>
+    <dimen name="home_hotGood_ml_pl">6dp</dimen>
 
 </resources>

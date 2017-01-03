@@ -1,4 +1,4 @@
-package com.paanxis.mojoy.app.activity;
+package com.paanxis.mojoy.app.activity.head;
 
 import android.app.Activity;
 import android.os.Bundle;

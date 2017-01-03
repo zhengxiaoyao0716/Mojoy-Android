@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/temp_bg">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:padding="@dimen/home_topBarPadding"
+            android:background="@color/temp_negative"
+            android:layout_gravity="center_horizontal"/>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/home_noticeHeight"
+                    android:layout_gravity="center_horizontal">
+
+                <android.support.v4.view.ViewPager
+                        android:id="@+id/noticeViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                <LinearLayout
+                        android:id="@+id/dotLinearLayout"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/home_dotBar_mb"
+                        android:layout_gravity="center_horizontal|bottom">
+
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="0"
+                            android:onClick="onDotClick"
+                            android:src="@drawable/global_dot"
+                            android:background="@android:color/transparent"/>
+
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/home_dot_mL"
+                            android:tag="1"
+                            android:onClick="onDotClick"
+                            android:src="@drawable/global_dot"
+                            android:background="@android:color/transparent"/>
+
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/home_dot_mL"
+                            android:tag="2"
+                            android:onClick="onDotClick"
+                            android:src="@drawable/global_dot"
+                            android:background="@android:color/transparent"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/global_editText_pTB"
+                    android:text="@string/home_searchTip"
+                    android:textSize="@dimen/global_etTextSize"
+                    android:textColor="@color/temp_searchTextColor"
+                    android:gravity="center"
+                    android:background="@color/temp_search"
+                    android:clickable="true"
+                    android:onClick="onSearchClick"/>
+
+            <com.paanxis.mojoy.app.view.LabelBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/labelBar"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/home_hotGood"
+                        android:textColor="@color/global_normalText"
+                        android:layout_marginLeft="@dimen/home_hotGood_ml_pl"
+                        android:paddingLeft="@dimen/home_hotGood_ml_pl"
+                        android:background="@drawable/home_hot_good_bg"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/home_seeMore"
+                        android:textColor="@color/global_negative"
+                        android:clickable="true"
+                        android:onClick="onSeeMoreClick"/>
+
+            </LinearLayout>
+
+            <!-- todo hotGoods -->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

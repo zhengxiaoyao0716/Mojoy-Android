@@ -1,10 +1,12 @@
-package com.paanxis.mojoy.app.activity;
+package com.paanxis.mojoy.app.activity.head;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import com.paanxis.mojoy.app.R;
+import com.paanxis.mojoy.app.activity.ActivityManage;
+import com.paanxis.mojoy.app.activity.body.HomeActivity;
 import com.paanxis.mojoy.app.net.account.Login;
 import com.paanxis.mojoy.app.net.account.SendCode;
 import com.paanxis.mojoy.app.net.account.SignUp;

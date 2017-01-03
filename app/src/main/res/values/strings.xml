@@ -28,4 +28,7 @@
     <string name="missPassword_title">忘记密码</string>
     <string name="global_ok">确认</string>
     <string name="missPwd_surePwd">确认密码</string>
+    <string name="home_hotGood">热门好物</string>
+    <string name="home_seeMore">查看更多></string>
+    <string name="home_searchTip">来搜点好玩的宝贝吧</string>
 </resources>

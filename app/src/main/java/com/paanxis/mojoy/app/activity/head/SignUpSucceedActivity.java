@@ -1,9 +1,11 @@
-package com.paanxis.mojoy.app.activity;
+package com.paanxis.mojoy.app.activity.head;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import com.paanxis.mojoy.app.R;
+import com.paanxis.mojoy.app.activity.ActivityManage;
+import com.paanxis.mojoy.app.activity.body.HomeActivity;
 
 public class SignUpSucceedActivity extends Activity {
 

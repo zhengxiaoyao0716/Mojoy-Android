@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import com.paanxis.mojoy.app.activity.ActivityManage;
-import com.paanxis.mojoy.app.activity.HomeActivity;
+import com.paanxis.mojoy.app.activity.body.HomeActivity;
 import com.paanxis.mojoy.app.net.HttpConnect;
 import com.paanxis.mojoy.app.net.HttpHandler;
 import com.paanxis.mojoy.app.net.HttpThread;

@@ -10,4 +10,10 @@
 
     <color name="signUpSucceed_negText">#aeaeae</color>
 
+    <color name="temp_bg">#dcd8d2</color>
+    <color name="temp_circleButton">#b8b9b9</color>
+    <color name="temp_negative">#aaa6a0</color>
+    <color name="temp_search">#e4e0da</color>
+    <color name="temp_searchTextColor">#9b9791</color>
+
 </resources>
